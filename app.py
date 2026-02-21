@@ -51,7 +51,7 @@ st.markdown("""
 @st.cache_resource
 def load_my_model():
     # Use your saved model name here
-    model = tf.keras.models.load_model("car_logo_model_91.h5")
+    model = tf.keras.models.load_model('car_logo_model_91.h5')
     return model
 
 
@@ -96,3 +96,4 @@ if uploaded_file is not None:
         if confidence < 60:
 
             st.warning("Low confidence! Please try a clearer image of the logo.")
+
