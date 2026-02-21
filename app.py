@@ -51,7 +51,7 @@ st.markdown("""
 @st.cache_resource
 def load_my_model():
     # Use your saved model name here
-    model = tf.keras.models.load_model(r"C:\Users\Shree\OneDrive\Documents\Gen Ai Projects\Classification Projects\Car logo\upload\car_logo_model_91.h5")
+    model = tf.keras.models.load_model("car_logo_model_91.h5")
     return model
 
 
@@ -73,7 +73,7 @@ if uploaded_file is not None:
     img = Image.open(uploaded_file)
     st.image(img, caption='Analyzing this image...', use_container_width=True)
 
-    with st.spinner('Artificial Intelligence is thinking...'):
+    with st.spinner('AI Model is thinking...'):
         # Prepare image for model
         img_input = img.resize((128, 128))
         img_array = image.img_to_array(img_input)
@@ -94,4 +94,5 @@ if uploaded_file is not None:
             st.info(f"### Confidence: {confidence:.2f}%")
 
         if confidence < 60:
+
             st.warning("Low confidence! Please try a clearer image of the logo.")
